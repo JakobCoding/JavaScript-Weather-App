@@ -17,21 +17,21 @@
         <button><img src="images/search.png"></button>
     </div>
     <div class="weather">
-        <img src="images/rain.png" class="weather-icon">
-        <h1 class="temp">12°c</h1>
-        <h2 class="city">London</h2>
+        <img src="images/clear.png" class="weather-icon">
+        <h1 class="temp">Global</h1>
+        <h2 class="city">Weather App</h2>
         <div class="details">
             <div class="col">
                 <img src="images/humidity.png">
                 <div>
-                    <p class="humidity">50 %</p>
+                    <p class="humidity"> </p>
                     <p>Humidity</p>
                 </div>
             </div>    
             <div class="col">
                 <img src="images/wind.png">
                 <div>
-                    <p class="wind">15 km/h</p>
+                    <p class="wind"></p>
                     <p>Wind Speed</p>
                 </div>    
             </div>
@@ -39,52 +39,6 @@
     </div>
    </div> 
 
-<!-- Adding Weather Data API to APP  -->
-   <script>
-    const apiKey = "532ec87a1f596f31b5d76eb2890b78d7";
-    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-
-    const searchBox = document.querySelector(".search input");
-    const searchBtn = document.querySelector(".search button");
-    const weatherIcon = document.querySelector(".weather-icon");
-
-
-    async function checkWeather(city){
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-        var data = await response.json();
-
-        console.log(data); 
-        //Connecting the Open weather map Api fetch results in the console.log to the app index.html  
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp)  + "°c";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-        if(data.weather[0].main == "Clouds"){
-            weatherIcon.src = "images/clouds.png";
-        }
-        else if(data.weather[0].main == "Clear"){
-            weatherIcon.src = "images/clear.png";
-        } 
-        else if(data.weather[0].main == "Rain"){
-            weatherIcon.src = "images/rain.png";
-        } 
-        else if(data.weather[0].main == "Drizzle"){
-            weatherIcon.src = "images/drizzle.png";
-        } 
-        else if(data.weather[0].main == "Mist"){
-            weatherIcon.src = "images/mist.png";
-        } 
-        else if(data.weather[0].main == "Snow"){
-            weatherIcon.src = "images/snow.png";
-        } 
-    }
-    // add checkWeather function to the search button addEventListerner checking for search box value ex: city search
-    searchBtn.addEventListener("click", ()=>{
-        checkWeather(searchBox.value);
-    })
-
-
-   </script>
+<script src="index.js"></script>
 </body>
 </html>

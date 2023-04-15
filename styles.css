@@ -57,16 +57,20 @@ body {
 .weather-icon{
     width: 170px;
     margin-top: 30px;
+    /* margin-bottom: 15px; */
 }
 
 .weather h1{
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 500;
+    /* margin-bottom: 15px; */
+    
 }
 .weather h2{
     font-size: 45px;
     font-weight: 400;
     margin-top: -10px;
+    padding-bottom: 20px;
 }
 .details{
     display: flex;
@@ -85,4 +89,8 @@ body {
 .col img{
     width: 40px;
     margin-right: 10px;
+}
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
 }

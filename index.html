@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>JavaScript Weather App</title>
 </head>
@@ -35,5 +38,19 @@
         </div>
     </div>
    </div> 
+
+<!-- Adding Weather Data API to APP  -->
+   <script>
+    const apiKey = "532ec87a1f596f31b5d76eb2890b78d7";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=perth";
+
+    async function checkWeather(){
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        console.log(data); 
+    }
+    checkWeather();
+   </script>
 </body>
 </html>

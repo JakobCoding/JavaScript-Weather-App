@@ -17,7 +17,7 @@
         }else{
             var data = await response.json();
 
-            //Connecting the Open weather map Api fetch results in the console.log to the app index.html  
+            //Connecting the Open weather map Api fetch results  
             document.querySelector(".city").innerHTML = data.name;
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp)  + "°c";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
